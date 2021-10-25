@@ -62,8 +62,6 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
-Plug 'jiangmiao/auto-pairs'
-Plug 'w0rp/ale'
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
 call plug#end()
@@ -79,7 +77,6 @@ map <f4> :emenu <c-z>
 syntax on
 colorscheme gruvbox
 set background=dark
-set termguicolors
 
 " enable 256 colors
 set t_CO=256
@@ -109,14 +106,6 @@ nmap <C-t> :TagbarToggle<CR>
 " Lightline settings
 set noshowmode
 let g:lightline={'colorscheme':'gruvbox'}
-
-" auto pairs
-au FileType python let b:AutoPairs = AutoPairsDefine({"f'":"'","r'":"'","b'":"'"})
-
-" python settings
-let g:ale_linters={'python':['flake8','pydocstyle']}
-let g:ale_fixers={'*':[],'python':['black','isort']}
-let g:ale_fix_on_save=1
 
 " move through split windows
 nmap <C-k> :wincmd k<CR>
